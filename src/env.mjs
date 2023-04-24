@@ -21,8 +21,6 @@ const server = z.object({
   // Add `.min(1) on ID and SECRET if you want to make sure they're not empty
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
-  NEXT_PUBLIC_WORDPRESS_API_ENDPOINT: z.string(),
-  NEXT_PUBLIC_ROOT_URL: z.string()
 });
 
 /**
@@ -33,6 +31,8 @@ const client = z.object(
   /** @satisfies {Record<`NEXT_PUBLIC_${string}`, import('zod').ZodType>} */ (
     {
       // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+      NEXT_PUBLIC_WORDPRESS_API_ENDPOINT: z.string(),
+      NEXT_PUBLIC_ROOT_URL: z.string()
     }
   ),
 );
@@ -46,9 +46,6 @@ const client = z.object(
 const processEnv = {
   DATABASE_URL: process.env.DATABASE_URL,
   NODE_ENV: process.env.NODE_ENV,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  SKIP_ENV_VALIDATION: process.env.SKIP_ENV_VALIDATION,
   NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
