@@ -3,10 +3,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { type GetStaticProps } from "next";
 
-import { Hero } from "@/src/components/Hero";
-import { SEO } from "@/src/components/Seo";
-import { PostBlock } from "@/src/components/PostBlock";
-import { getPosts } from "@/src/lib/service";
+import { Hero } from "~/components/Hero";
+import { SEO } from "~/components/Seo";
+import { PostBlock } from "~/components/PostBlock";
+import { getPosts } from "~/lib/service";
 
 export default function HomePage({ posts }: { posts: any }) {
   return (

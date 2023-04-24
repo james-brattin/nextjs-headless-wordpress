@@ -4,9 +4,9 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { type GetStaticProps } from "next";
 import { type GetStaticPaths } from "next";
-import { SEO } from "@/src/components/Seo";
+import { SEO } from "~/components/Seo";
 
-import { getPosts, getPostBySlug } from "@/src/lib/service";
+import { getPosts, getPostBySlug } from "~/lib/service";
 
 export default function PostDetails({ post }: { post: any }) {
   return (
